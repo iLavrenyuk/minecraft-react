@@ -4,7 +4,8 @@ import { Sky } from 'drei';
 import { Vector3 } from 'three';
 import { Physics } from 'use-cannon';
 import { Ground } from './Ground';
-import { Camera } from './Camera'
+import { Camera } from './Camera';
+import { Player } from './Player';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Canvas>
       // Отрисовка мира от лица персонажа, при помощи Камеры
       <Camera />
+      // Небо, солнце, свет
       <Sky sunPosition={new Vector3(100, 10, 100)} />
       <ambientLight intensity={0.3} />
       <pointLight
@@ -20,7 +22,9 @@ function App() {
         position={[100, 100, 100]}
       />
       <Physics gravity={[0, -30, 0]}>
+        // Плоскость, земля, пол
         <Ground />
+        <Player />
       </Physics>
     </Canvas>
   )
