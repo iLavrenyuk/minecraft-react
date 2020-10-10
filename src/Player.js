@@ -4,10 +4,10 @@ import { useFrame, useThree } from 'react-three-fiber';
 import { PointerLockControls } from './PointerLockControls';
 
 export const Player = (props) => {
-    //Ссылка на камеру текущую
+    {/*Ссылка на камеру текущую*/}
     const { camera } = useThree();
 
-    // Вместо игрока физический элемент СФЕРА
+    {/*Вместо игрока физический элемент СФЕРА*/}
     const [ref, api] = useSphere(() => ({
         mass: 1,
         type: "Dynamic",
@@ -15,7 +15,7 @@ export const Player = (props) => {
         ...props,
     }));
 
-    //Сдвиг камеры за физическим объектом при смене координат
+    {/*Сдвиг камеры за физическим объектом при смене координат*/}
     useFrame(() => {
         camera.position.copy(ref.current.position)
     })

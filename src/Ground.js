@@ -18,15 +18,13 @@ export const Ground = (props) => {
     // Сколько раз ей нужно повториться
     texture.repeat.set(240, 240)
 
-
+    {/*3-d element (three.js library) Чтобы в плоскости на земле рисовались тени*/ }
     return (
-        //3-d element (three.js library)
-        //Чтобы в плоскости на земле рисовались тени
-        <mesh ref={ref} receiveShadow>
-             //Плоскость
+        <mesh mesh ref={ref} receiveShadow >
+            {/*Плоскость*/}
             <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
-            // Teкстура которую использую
+            {/*Teкстура которую использую*/}
             <meshStandardMaterial map={texture} attach="material" />
-        </mesh>
-    )
+        </mesh >
+    );
 }

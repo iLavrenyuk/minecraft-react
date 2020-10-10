@@ -8,11 +8,12 @@ export const PointerLockControls = (props) => {
     const { camera, gl } = useThree();
     const controls = useRef();
 
+    {/*Лок мышки*/}
     useEffect(() => {
         document.addEventListener("click", () => {
             controls.current.lock()
         })
-    }, []);    // Лок мышки
+    }, [])
 
     return (
         <pointerLockControlsImpl
