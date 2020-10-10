@@ -5,22 +5,22 @@ import { extend, useThree } from 'react-three-fiber';
 extend({ PointerLockControlsImpl });
 
 export const PointerLockControls = (props) => {
-    const { camera, gl } = useThree();
-    const controls = useRef();
+  const { camera, gl } = useThree();
+  const controls = useRef();
 
-    {/*Лок мышки*/}
-    useEffect(() => {
-        document.addEventListener("click", () => {
-            controls.current.lock()
-        })
-    }, [])
+  {/*Лок мышки*/ }
+  useEffect(() => {
+    document.addEventListener("click", () => {
+      controls.current.lock()
+    })
+  }, [])
 
-    return (
-        <pointerLockControlsImpl
-            ref={controls}
-            args={[camera, gl.domElement]}
-            {...props}
-        />
-    )
+  return (
+    <pointerLockControlsImpl
+      ref={controls}
+      args={[camera, gl.domElement]}
+      {...props}
+    />
+  )
 
 }

@@ -19,14 +19,14 @@ function App() {
       <pointLight
         castShadow
         intensity={0.8}
-        position={[100, 100, 100]}/>
+        position={[100, 100, 100]} />
       <Physics gravity={[0, -30, 0]}>
         {/* Плоскость, земля, пол */}
         <Ground />
         <Player />
       </Physics>
     </Canvas>
-  )
+  );
 }
 
 export default App;
