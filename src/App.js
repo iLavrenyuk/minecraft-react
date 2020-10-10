@@ -6,11 +6,12 @@ import { Physics } from 'use-cannon';
 import { Ground } from './Ground';
 import { Camera } from './Camera';
 import { Player } from './Player';
+import { Cube } from './Cube';
 
 
 function App() {
   return (
-    <Canvas>
+    <Canvas shadowMap sRGB gl={{ alpha: true }}>
       {/*Отрисовка мира от лица персонажа, при помощи Камеры*/}
       <Camera />
       {/* Небо, солнце, свет */}
@@ -24,6 +25,7 @@ function App() {
         {/* Плоскость, земля, пол */}
         <Ground />
         <Player />
+        <Cube position={[0, 0.5, -10]} />
       </Physics>
     </Canvas>
   );
