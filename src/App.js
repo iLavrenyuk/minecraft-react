@@ -6,12 +6,14 @@ import { Physics } from 'use-cannon';
 import { Ground } from './Ground';
 import { Camera } from './Camera';
 import { Player } from './Player';
-import { Cube } from './Cube';
+import { Cube, useCubeStore } from './Cube';
 
 
 function App() {
+  const cubes = useCubeStore(state => state.cubes)
+
   return (
-    <Canvas shadowMap sRGB gl={{ alpha: true }}>
+    <Canvas shadowMap srgb="true" gl={{ alpha: true }}>
       {/*Отрисовка мира от лица персонажа, при помощи Камеры*/}
       <Camera />
       {/* Небо, солнце, свет */}
@@ -26,6 +28,9 @@ function App() {
         <Ground />
         <Player />
         <Cube position={[0, 0.5, -10]} />
+        {
+          cubes.map(cube => cube)
+        }
       </Physics>
     </Canvas>
   );
