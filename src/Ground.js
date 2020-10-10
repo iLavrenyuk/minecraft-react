@@ -1,6 +1,7 @@
 import React from 'react';
-import grass from 'img/grass'
+import grass from './img/grass.jpg'
 import { RepeatWrapping, TextureLoader } from 'three';
+import { usePlane } from 'use-cannon';
 
 
 export const Ground = (props) => {
@@ -10,7 +11,7 @@ export const Ground = (props) => {
         rotation: [-Math.PI / 2, 0, 0], ...props //Поворачиваем Plane горизонтально
     }))
 
-    const texture = new TextureLoader.load(grass);
+    const texture = new TextureLoader().load(grass);
     //Повторяю текстуру
     texture.wrapS = RepeatWrapping;
     texture.wrapT = RepeatWrapping;

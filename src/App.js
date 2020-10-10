@@ -11,19 +11,15 @@ import { Player } from './Player';
 function App() {
   return (
     <Canvas>
-      // Отрисовка мира от лица персонажа, при помощи Камеры
       <Camera />
-      // Небо, солнце, свет
-      <Sky sunPosition={new Vector3(100, 10, 100)} />
+      <Sky sunPosition={new Vector3(100, 10, 100)} />       // Небо, солнце, свет
       <ambientLight intensity={0.3} />
       <pointLight
         castShadow
         intensity={0.8}
-        position={[100, 100, 100]}
-      />
+        position={[100, 100, 100]}/>
       <Physics gravity={[0, -30, 0]}>
-        // Плоскость, земля, пол
-        <Ground />
+        <Ground />        // Плоскость, земля, пол
         <Player />
       </Physics>
     </Canvas>
